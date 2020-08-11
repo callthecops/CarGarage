@@ -1,4 +1,6 @@
 package model.racks;
 
-public class FourWheelerRack {
+import model.vehicles.fourwheeler.FourWheeler;
+
+public class FourWheelerRack<T extends FourWheeler> {
 }

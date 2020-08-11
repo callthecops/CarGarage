@@ -1,4 +1,4 @@
-package model.vehicles;
+package model.vehicles.multiwheelers;
 
 public interface MultiWheeler {
     void startEngine();
