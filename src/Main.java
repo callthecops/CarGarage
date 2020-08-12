@@ -10,21 +10,21 @@ public class Main {
 
 
     public static void main(String[] args) {
+        //Initialising Garage
         Garage<TwoWheeler> garage = new Garage<>();
-        Display<TwoWheeler> display = new Display(garage);
+        //Creating and adding 2wheeler tires to the already created Rack List.
+        List<? super TwoWheeler> thelist = garage.gettTwoWheelerSpace().getTwoWheelerRack().getTireList();
+        MotorBikeTire motorBikeTire = new MotorBikeTire("Our tires work on any weather", "Kawasaki/MotorBike");
+        ScooterTire scooterTires = new ScooterTire("Very durable tires!", "Michelin/Scooter");
+        thelist.add(motorBikeTire);
+        thelist.add(scooterTires);
+
+
+        //Displaying the user selection menu
+        Display<TwoWheeler> display = new Display<>(garage);
 
         display.displayCarMenu();
 
-//        Garage<TwoWheeler> garage = new Garage<>();
-//        List<? super TwoWheeler> thelist = garage.gettTwoWheelerSpace().getTwoWheelerRack().getTireList();
-//
-//        MotorBikeTire motorBikeTire = new MotorBikeTire("Our tires work on any weather", "Kawasaki");
-//        ScooterTire scooterTires = new ScooterTire("Very durable tires!", "Michelin");
-//
-//        thelist.add(motorBikeTire);
-//        thelist.add(scooterTires);
-//
-//        System.out.println(thelist.size());
 
     }
 

@@ -1,5 +1,9 @@
 package service;
 
+import model.Vehicle;
+import model.vehicles.MotorBike;
+import model.vehicles.Scooter;
+
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
@@ -38,24 +42,25 @@ public class AppLogic {
     }
 
 
-    public void useUserChoice(int i) {
+    public Vehicle useUserChoiceToSelectVehicleForTireChange(int i) {
         switch (i) {
             case 1:
-                System.out.println("one");
-                break;
+                System.out.println("Preparing Motorbike for Tire change..");
+                return new MotorBike();
             case 2:
-                System.out.println("two");
-                break;
+                System.out.println("Preparing Scooter for Tire change..");
+                return new Scooter();
             case 3:
-                System.out.print("three");
+                System.out.print("Preparing Car for Tire change..");
                 break;
             case 4:
-                System.out.println("four");
+                System.out.println("Preparing Van for Tire change..");
                 break;
             case 5:
                 System.out.print("Exiting..");
                 System.exit(0);
         }
+        return null;
     }
 
 

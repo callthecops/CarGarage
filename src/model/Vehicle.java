@@ -2,6 +2,8 @@ package model;
 
 public interface Vehicle {
 
-    void driveIn();
-    void driveOut();
+    void startEngine();
+
+    void stopEngine();
+
 }

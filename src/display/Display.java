@@ -1,6 +1,8 @@
 package display;
 
 import model.Garage;
+import model.Vehicle;
+import multhithreading.VehicleProcessFactory;
 import service.AppLogic;
 import service.GarageLogic;
 
@@ -25,6 +27,8 @@ public class Display<T> {
                 "5.Exit\n");
 
         int choice = appLogic.retrieveUserChoice();
-        appLogic.useUserChoice(choice);
+        Vehicle vehicle = appLogic.useUserChoiceToSelectVehicleForTireChange(choice);
+        Runnable job = new VehicleProcessFactory(vehicle);
+        Thread thread = new Thread(job);
     }
 }
