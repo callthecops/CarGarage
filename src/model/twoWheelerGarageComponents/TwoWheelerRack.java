@@ -1,30 +1,24 @@
 package model.twoWheelerGarageComponents;
 
-import model.twoWheeler.MotorBikeTire;
-import model.twoWheeler.ScooterTire;
-
+import java.util.ArrayList;
 import java.util.List;
 
 public class TwoWheelerRack<T> {
-    private List<T> tireList;
+    private List<? super T> tireList;
 
 
-    public TwoWheelerRack(){}
-
-    public TwoWheelerRack(List<T> tireList){
-        this.tireList=tireList;
+    public TwoWheelerRack() {
+        this.tireList = new ArrayList<>();
     }
 
 
-    public List<T> getTireList() {
+    public List<? super T> getTireList() {
         return tireList;
     }
 
-
-    public void setTireList(List<T> tireList) {
+    public void setTireList(List<? super T> tireList) {
         this.tireList = tireList;
     }
-
 
     public void checkRackTireQuantity() {
         System.out.println(tireList.size());

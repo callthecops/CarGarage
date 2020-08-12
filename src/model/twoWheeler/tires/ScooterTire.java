@@ -1,4 +1,4 @@
-package model.twoWheeler;
+package model.twoWheeler.tires;
 
 public class ScooterTire extends Tire implements TwoWheeler {
 
