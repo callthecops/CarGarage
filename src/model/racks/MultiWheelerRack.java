@@ -1,6 +1,6 @@
 package model.racks;
 
-import model.vehicles.multiwheelers.MultiWheeler;
+import model.tires.multiwheeler.MultiWheeler;
 
 public class MultiWheelerRack<T extends MultiWheeler> {
 }

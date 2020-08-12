@@ -1,6 +1,6 @@
 package model.racks;
 
-import model.vehicles.twowheeler.TwoWheeler;
+import model.tires.twowheeler.TwoWheeler;
 
 public class TwoWheelerRack<T extends TwoWheeler> {
 }

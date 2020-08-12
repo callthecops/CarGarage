@@ -1,13 +1,7 @@
 package model.vehicles.fourwheeler;
 
-public class Car implements FourWheeler{
-    @Override
-    public void startEngine() {
+import model.tires.fourwheeler.FourWheeler;
 
-    }
+public class Car  {
 
-    @Override
-    public void drive() {
-
-    }
 }
