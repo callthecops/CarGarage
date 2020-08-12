@@ -4,7 +4,6 @@ import model.Vehicle;
 import model.vehicles.MotorBike;
 import model.vehicles.Scooter;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class AppLogic {

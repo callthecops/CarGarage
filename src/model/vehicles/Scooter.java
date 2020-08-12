@@ -2,7 +2,7 @@ package model.vehicles;
 
 import model.Vehicle;
 
-public class Scooter implements Vehicle, VehicleParking {
+public class Scooter implements Vehicle {
 
     @Override
     public void startEngine() {

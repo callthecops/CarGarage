@@ -13,6 +13,11 @@ public class VehicleProcessFactory implements Runnable {
 
     @Override
     public void run() {
-
+        vehicle.startEngine();
+        vehicle.driveIn();
+        vehicle.driveOut();
+        vehicle.stopEngine();
     }
+
+
 }

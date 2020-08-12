@@ -1,9 +1,10 @@
 package model;
 
-public interface Vehicle {
+import model.vehicles.Parkable;
+
+public interface Vehicle extends Parkable {
 
     void startEngine();
 
     void stopEngine();
-
 }

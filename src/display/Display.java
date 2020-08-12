@@ -30,5 +30,6 @@ public class Display<T> {
         Vehicle vehicle = appLogic.useUserChoiceToSelectVehicleForTireChange(choice);
         Runnable job = new VehicleProcessFactory(vehicle);
         Thread thread = new Thread(job);
+        thread.start();
     }
 }

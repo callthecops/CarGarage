@@ -1,6 +1,6 @@
 package model.vehicles;
 
-public interface VehicleParking {
+public interface Parkable {
     void driveIn();
 
     void driveOut();
