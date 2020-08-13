@@ -6,12 +6,12 @@ import multhithreading.VehicleProcessFactory;
 import service.AppLogic;
 import multhithreading.FactoryLogic;
 
-public class Display<T> {
+public class Display<T, R> {
     private final FactoryLogic factoryLogic;
     private final AppLogic appLogic;
-    private final Garage<T> garage;
+    private final Garage<T, R> garage;
 
-    public Display(Garage<T> garage) {
+    public Display(Garage<T, R> garage) {
         this.garage = garage;
         this.appLogic = new AppLogic();
         this.factoryLogic = new FactoryLogic();
@@ -36,7 +36,7 @@ public class Display<T> {
         } catch (InterruptedException exception) {
             exception.printStackTrace();
         }
-
+        //Using Recursion
         displayCarMenu();
     }
 

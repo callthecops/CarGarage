@@ -2,8 +2,10 @@ package service;
 
 import display.Display;
 import model.Vehicle;
+import model.vehicles.Car;
 import model.vehicles.MotorBike;
 import model.vehicles.Scooter;
+import model.vehicles.Van;
 
 import java.util.Scanner;
 
@@ -52,10 +54,10 @@ public class AppLogic {
                 return new Scooter();
             case 3:
                 System.out.print("Preparing Car for Tire change..");
-                break;
+                return new Car();
             case 4:
                 System.out.println("Preparing Van for Tire change..");
-                break;
+                return new Van();
             case 5:
                 System.out.print("Exiting..");
                 System.exit(0);
