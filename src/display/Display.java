@@ -31,14 +31,14 @@ public class Display<T> {
         Runnable job = new VehicleProcessFactory<>(vehicle, garage);
         Thread thread = new Thread(job);
         thread.start();
-//        appLogic.routToParking(Display.this);
-        System.out.println("ASDASD");
-    }
+        try {
+            thread.join();
+        } catch (InterruptedException exception) {
+            exception.printStackTrace();
+        }
 
-    public void displayParkingMessage() {
-        System.out.println("Vehicle is out of the Garage and was successfully parked.\n");
-        System.out.println("Please retrieve your keys from the reception,don't forget the payment!\n" + "Have a nice day!");
         displayCarMenu();
     }
+
 
 }

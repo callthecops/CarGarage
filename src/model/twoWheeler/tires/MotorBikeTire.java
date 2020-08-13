@@ -1,5 +1,7 @@
 package model.twoWheeler.tires;
 
+import model.genericTire.Tire;
+
 public class MotorBikeTire extends Tire implements TwoWheeler {
 
     private Enum<TwoWheelerTireTypes> type;

@@ -1,4 +1,4 @@
-package model.twoWheeler.tires;
+package model.genericTire;
 
 public class Tire {
     protected String brand;

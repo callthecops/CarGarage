@@ -30,8 +30,7 @@ public class VehicleProcessFactory<T> implements Runnable {
         if (vehicle instanceof MotorBike) {
             isInstanceOfMotorBike();
         } else if (vehicle instanceof Scooter) {
-            System.out.println("Changing the tires to the Scooter");
-
+            isInstanceOfScooter();
         }
         try {
             Thread.sleep(1000);
@@ -55,7 +54,7 @@ public class VehicleProcessFactory<T> implements Runnable {
 
 
     public void isInstanceOfMotorBike() {
-        System.out.println("Changing the tires to the MotorBike\n");
+        System.out.println("Preparing MotorBike Rack\n");
         try {
             System.out.println("Please wait..\n");
             Thread.sleep(3000);
@@ -65,5 +64,15 @@ public class VehicleProcessFactory<T> implements Runnable {
         }
     }
 
+    public void isInstanceOfScooter() {
+        System.out.println("Preparing Scooter Rack\n");
+        try {
+            System.out.println("Please wait..\n");
+            Thread.sleep(3000);
+            factoryLogic.vehicleIsScooter(vehicle, garage);
+        } catch (InterruptedException exception) {
+            exception.printStackTrace();
+        }
+    }
 
 }

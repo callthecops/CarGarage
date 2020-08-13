@@ -35,8 +35,12 @@ public class FactoryLogic<T> {
 
     }
 
-    public void vehicleIsScooter(Vehicle vehicle, Garage<T> garage) {
+    public void vehicleIsScooter(Vehicle vehicle, Garage<T> garage) throws InterruptedException {
+
         Scooter scooter = (Scooter) vehicle;
+        System.out.println("Retrieving Scooter Tires");
+        Thread.sleep(1500);
+        System.out.println("Please Wait..");
         List<? super T> tireList = garage.gettTwoWheelerSpace().getTwoWheelerRack().getTireList();
         ScooterTire scooterTire = null;
 
@@ -45,7 +49,11 @@ public class FactoryLogic<T> {
                 scooterTire = (ScooterTire) tire;
             }
         }
+        System.out.println("|Changing tires of the scooter to: " + scooterTire.getBrand() +
+                "|Description: " + scooterTire.getDescription());
 
+        Thread.sleep(2000);
+        System.out.println("Done");
         scooter.setScooterTire(scooterTire);
     }
 

@@ -63,9 +63,4 @@ public class AppLogic {
         return null;
     }
 
-    public void routToParking(Display display) {
-        display.displayParkingMessage();
-    }
-
-
 }
