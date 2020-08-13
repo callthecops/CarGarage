@@ -1,8 +1,12 @@
 package model.vehicles;
 
 import model.Vehicle;
+import model.twoWheeler.tires.MotorBikeTire;
 
 public class MotorBike implements Vehicle {
+
+    MotorBikeTire motorBikeTire;
+
     @Override
     public void startEngine() {
         System.out.println("Starting the engine for the MotorBike..");
@@ -21,5 +25,14 @@ public class MotorBike implements Vehicle {
     @Override
     public void stopEngine() {
         System.out.println("Stopping the engine for the MotorBike..");
+    }
+
+
+    public MotorBikeTire getMotorBikeTire() {
+        return motorBikeTire;
+    }
+
+    public void setMotorBikeTire(MotorBikeTire motorBikeTire) {
+        this.motorBikeTire = motorBikeTire;
     }
 }

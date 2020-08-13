@@ -4,17 +4,17 @@ import model.Garage;
 import model.Vehicle;
 import multhithreading.VehicleProcessFactory;
 import service.AppLogic;
-import service.GarageLogic;
+import multhithreading.FactoryLogic;
 
 public class Display<T> {
-    private final GarageLogic garageLogic;
+    private final FactoryLogic factoryLogic;
     private final AppLogic appLogic;
     private final Garage<T> garage;
 
     public Display(Garage<T> garage) {
         this.garage = garage;
         this.appLogic = new AppLogic();
-        this.garageLogic = new GarageLogic();
+        this.factoryLogic = new FactoryLogic();
     }
 
 
@@ -28,8 +28,17 @@ public class Display<T> {
 
         int choice = appLogic.retrieveUserChoice();
         Vehicle vehicle = appLogic.useUserChoiceToSelectVehicleForTireChange(choice);
-        Runnable job = new VehicleProcessFactory(vehicle);
+        Runnable job = new VehicleProcessFactory<>(vehicle, garage);
         Thread thread = new Thread(job);
         thread.start();
+//        appLogic.routToParking(Display.this);
+        System.out.println("ASDASD");
     }
+
+    public void displayParkingMessage() {
+        System.out.println("Vehicle is out of the Garage and was successfully parked.\n");
+        System.out.println("Please retrieve your keys from the reception,don't forget the payment!\n" + "Have a nice day!");
+        displayCarMenu();
+    }
+
 }

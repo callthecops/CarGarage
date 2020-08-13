@@ -1,5 +1,6 @@
 package service;
 
+import display.Display;
 import model.Vehicle;
 import model.vehicles.MotorBike;
 import model.vehicles.Scooter;
@@ -60,6 +61,10 @@ public class AppLogic {
                 System.exit(0);
         }
         return null;
+    }
+
+    public void routToParking(Display display) {
+        display.displayParkingMessage();
     }
 
 

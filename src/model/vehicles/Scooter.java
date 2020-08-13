@@ -1,8 +1,10 @@
 package model.vehicles;
 
 import model.Vehicle;
+import model.twoWheeler.tires.ScooterTire;
 
 public class Scooter implements Vehicle {
+    ScooterTire scooterTire;
 
     @Override
     public void startEngine() {
@@ -22,5 +24,13 @@ public class Scooter implements Vehicle {
     @Override
     public void stopEngine() {
         System.out.println("Stopping the engine for the Scooter..");
+    }
+
+    public ScooterTire getScooterTire() {
+        return scooterTire;
+    }
+
+    public void setScooterTire(ScooterTire scooterTire) {
+        this.scooterTire = scooterTire;
     }
 }

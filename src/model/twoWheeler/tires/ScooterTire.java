@@ -4,9 +4,6 @@ public class ScooterTire extends Tire implements TwoWheeler {
 
     private Enum<TwoWheelerTireTypes> type;
 
-    public void changeTwoTires() {
-        System.out.println("Scooter Tires have been Changed");
-    }
 
     public ScooterTire(String description, String brand) {
         this.description = description;
@@ -19,8 +16,6 @@ public class ScooterTire extends Tire implements TwoWheeler {
         return type;
     }
 
-    public void setType(Enum<TwoWheelerTireTypes> type) {
-        this.type = type;
-    }
+
 }
 
