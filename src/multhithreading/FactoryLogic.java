@@ -22,13 +22,14 @@ public class FactoryLogic<T, R> {
         Thread.sleep(1500);
         System.out.println("Please Wait..");
         List<? super T> tireList = garage.getTwoWheelerSpace().getTwoWheelerRack().getTireList();
-        MotorBikeTire motorBikeTire = null;
 
-        for (Object tire : tireList) {
-            if (tire instanceof MotorBikeTire) {
-                motorBikeTire = (MotorBikeTire) tire;
-            }
-        }
+
+        MotorBikeTire motorBikeTire = tireList.stream()
+                .filter(tire -> tire instanceof MotorBikeTire)
+                .map(MotorBikeTire.class::cast)
+                .findAny()
+                .orElse(null);
+
         System.out.println("|Changing tires of the motorbike to: " + motorBikeTire.getBrand() +
                 "|Description: " + motorBikeTire.getDescription());
 
@@ -46,13 +47,13 @@ public class FactoryLogic<T, R> {
         Thread.sleep(1500);
         System.out.println("Please Wait..");
         List<? super T> tireList = garage.getTwoWheelerSpace().getTwoWheelerRack().getTireList();
-        ScooterTire scooterTire = null;
 
-        for (Object tire : tireList) {
-            if (tire instanceof ScooterTire) {
-                scooterTire = (ScooterTire) tire;
-            }
-        }
+        ScooterTire scooterTire = tireList.stream()
+                .filter(tire -> tire instanceof ScooterTire)
+                .map(ScooterTire.class::cast)
+                .findAny()
+                .orElse(null);
+
         System.out.println("|Changing tires of the scooter to: " + scooterTire.getBrand() +
                 "|Description: " + scooterTire.getDescription());
 
@@ -68,13 +69,14 @@ public class FactoryLogic<T, R> {
         Thread.sleep(1500);
         System.out.println("Please Wait..");
         List<? super R> tireList = garage.getFourWheelerSpace().getFourWheelerRack().getTireList();
-        CarTire carTire = null;
 
-        for (Object tire : tireList) {
-            if (tire instanceof CarTire) {
-                carTire = (CarTire) tire;
-            }
-        }
+
+        CarTire carTire = tireList.stream()
+                .filter(tire -> tire instanceof CarTire)
+                .map(CarTire.class::cast)
+                .findAny()
+                .orElse(null);
+
         System.out.println("|Changing tires of the car to: " + carTire.getBrand() +
                 "|Description: " + carTire.getDescription());
 
@@ -90,13 +92,21 @@ public class FactoryLogic<T, R> {
         Thread.sleep(1500);
         System.out.println("Please Wait..");
         List<? super R> tireList = garage.getFourWheelerSpace().getFourWheelerRack().getTireList();
-        VanTire vanTire = null;
 
-        for (Object tire : tireList) {
-            if (tire instanceof VanTire) {
-                vanTire = (VanTire) tire;
-            }
-        }
+
+//        for (Object tire : tireList) {
+//            if (tire instanceof VanTire) {
+//                vanTire = (VanTire) tire;
+//            }
+//        }
+
+        VanTire vanTire = tireList.stream()
+                .filter(tire -> tire instanceof VanTire)
+                .map(VanTire.class::cast)
+                .findAny()
+                .orElse(null);
+
+
         System.out.println("|Changing tires of the van to: " + vanTire.getBrand() +
                 "|Description: " + vanTire.getDescription());
 

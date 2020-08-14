@@ -20,6 +20,7 @@ public class Main {
 
         display.displayCarMenu();
 
+
     }
 
     public static Garage<TwoWheeler, FourWheeler> getTwoWheelerFourWheelerGarage() {
