@@ -28,6 +28,7 @@ public class Display<T, R> {
 
         int choice = appLogic.retrieveUserChoice();
         Vehicle vehicle = appLogic.useUserChoiceToSelectVehicleForTireChange(choice);
+        //Using Thread
         Runnable job = new VehicleProcessFactory<>(vehicle, garage);
         Thread thread = new Thread(job);
         thread.start();
